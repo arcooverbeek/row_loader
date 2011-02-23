@@ -441,6 +441,17 @@ body.bp form.inline p {
   margin-bottom: 0;
 }
 
+/* line 19, ../../../app/stylesheets/partials/_page.scss */
+#loader {
+  position: absolute;
+  bottom: 0px;
+  left: 45%;
+  background-color: red;
+  height: 30px;
+  width: 100px;
+  color: white;
+}
+
 /* line 18, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_form.scss */
 form.bp label {
   font-weight: bold;
