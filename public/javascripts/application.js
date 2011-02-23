@@ -1,37 +1,14 @@
 $(document).ready(function() {  
-    $(function(){
-
-
-      /* */
-      $('#body').infinitescroll({
-
-        navSelector  : "a#next:last",            
-                       // selector for the paged navigation (it will be hidden)
-        nextSelector : "a#next:last",   
-                       // selector for the NEXT link (to page 2)
-        itemSelector : "#body p",          
-                       // selector for all items you'll retrieve
-
-
-        pathParse     : (!location.search) ? undefined : function( pathStr, nextPage ){
-                          return pathStr.replace('2', nextPage );
-                        }
-      }, function(){ 
-        window.callbackcontext = this;
-        window.console && console.log('callbackcontext',this,$(this).find('p'))
+  $('#next').live('inview', function(event, visible) {
+    if (visible) {
+      if ($(this).hasClass('loaded') == false) {
+        var url = $(this).attr("href");
+        $.get(url, function(data) {
+          $('#rows').append(data);
+          alert('Load was performed.');
         });
-    /*  */
-      /* * /
-      $('#innerscroll').infinitescroll({
-
-        navSelector  : "a#innernext:last",            
-                       // selector for the paged navigation (it will be hidden)
-        nextSelector : "a#innernext:last",   
-                       // selector for the NEXT link (to page 2)
-        itemSelector : "#body p"          ,
-                       // selector for all items you'll retrieve
-        localMode   : true  
-      });
-    /*  */
+        $(this).addClass('loaded');
+      }
+    }
   });
 });

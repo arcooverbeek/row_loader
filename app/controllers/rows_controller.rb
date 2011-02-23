@@ -7,6 +7,7 @@ class RowsController < ApplicationController
   def load_more
     if params[:start] && params[:end]
       @rows = Row.limit(50)  
-    end  
+    end
+    render :layout => false  
   end
 end

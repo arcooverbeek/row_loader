@@ -1,7 +1,6 @@
-#rows
-  %ul  
-    -@rows.each do |row|
-      %li
-        =row.name
-        =row.company
-  =link_to "next_page", load_more_rows_path(:start => "50", :end => "100"), :id => "next"
+%ul  
+  -@rows.each do |row|
+    %li
+      =row.name
+      =row.company
+=link_to "next_page", load_more_rows_path(:start => "50", :end => "100"), :id => "next"
