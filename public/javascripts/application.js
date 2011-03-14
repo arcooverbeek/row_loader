@@ -5,7 +5,7 @@ $(document).ready(function() {
       var url = $(this).attr("href");
       $.get(url, function(data) {
         $('#next').addClass('loaded');
-        $('#rows').append(data);
+        $('.rowlist').append(data);
         $('#loader').hide();
       });
       $('.loaded').remove();
