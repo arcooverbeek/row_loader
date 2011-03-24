@@ -1,10 +1,9 @@
+#statusholder
+  Loader is : 
+  %span{:id => "status"}
+    Idle
 %h1
   Overview of all rows
-
 #rows
   %ul.rowlist
-    -@rows.each do |row|
-      %li
-        =row.name
-        =row.company
-  =link_to "next_page", load_more_rows_path(:start => "50", :end => "100"), :id => "next"
+    =render :partial => 'rows'

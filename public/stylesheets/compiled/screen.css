@@ -442,6 +442,11 @@ body.bp form.inline p {
 }
 
 /* line 19, ../../../app/stylesheets/partials/_page.scss */
+h1 {
+  padding-top: 20px;
+}
+
+/* line 23, ../../../app/stylesheets/partials/_page.scss */
 #loader {
   position: absolute;
   bottom: 0px;
@@ -452,7 +457,24 @@ body.bp form.inline p {
   color: white;
 }
 
-/* line 29, ../../../app/stylesheets/partials/_page.scss */
+/* line 32, ../../../app/stylesheets/partials/_page.scss */
+#statusholder {
+  background-color: #c0c0c0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/* line 41, ../../../app/stylesheets/partials/_page.scss */
+.next_loader {
+  height: 200px;
+  background-color: green;
+  padding: 40px;
+  width: 400px;
+}
+
+/* line 48, ../../../app/stylesheets/partials/_page.scss */
 ul {
   margin: 0px;
   padding: 0px;

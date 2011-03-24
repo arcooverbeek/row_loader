@@ -1,0 +1,7 @@
+-@rows.each_with_index do |row, index|
+  %li
+    =(@end == 50 ? index : @end  -50 + index)
+    =row.name
+    =row.company
+    =#row.description
+=link_to "Loading next page..", load_more_rows_path(:end => @end), :id => "next", :class => "next_loader"

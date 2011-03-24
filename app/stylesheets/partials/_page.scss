@@ -16,6 +16,10 @@ body.bp {
 // Or leave it in if you're happy with how blueprint looks out-of-the-box
 @include blueprint-scaffolding("body.bp");
 
+h1 {
+  padding-top: 20px;
+}
+
 #loader {
   position: absolute;
   bottom: 0px;
@@ -24,6 +28,21 @@ body.bp {
   height: 30px;
   width: 100px;
   color: white;
+}
+#statusholder {
+  background-color: #c0c0c0;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:100;
+
+}
+
+.next_loader {
+  height: 200px;
+  background-color: green;
+  padding: 40px;
+  width: 400px;
 }
 
 ul {
