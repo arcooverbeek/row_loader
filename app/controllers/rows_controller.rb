@@ -1,14 +1,27 @@
 class RowsController < ApplicationController
 
   def index
-    @rows = Row.limit(50)
+   
+    @all_rows = Row.select(:id).collect(&:id)
+    
+    
+    @rowss = []
+    50.times do |index|
+      @rowss << @all_rows[index]
+    end
+    @rows = Row.find(@rowss)
     @end = 50
   end
   
   def load_more
     if params[:end]
-      @rows = Row.limit(50)
-      #@rows = Row.find(:all, :conditions => { :grade => 9..12 })
+      @all_rows = Row.select(:id).collect(&:id)
+      @rowss= []
+      50.times do |index|
+        
+        @rowss << @all_rows[params[:end].to_i + index]
+      end
+      @rows = Row.find(@rowss)
       @end = params[:end].to_i + 50  
     end
     render :layout => false  
